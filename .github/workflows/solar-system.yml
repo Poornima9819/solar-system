@@ -33,7 +33,7 @@ jobs:
           run: npm test
 
         - name: Archive Test Result 
-          if:  failure() && (steps.npm-unit-testing-step.outcome == 'failure' || steps.npm-unit-testing-step.outcome == 'success')   
+          if:  always()
           uses: actions/upload-artifact@v4
           with:
             name: Mocha-Test-result
